@@ -1,0 +1,58 @@
+.\" Copyright (C) 2006 Uwe Hermann <uwe@hermann-uwe.de>.
+.\" This manpage is licensed under the terms of the GNU GPL.
+.TH M16C-FLASH 1 "August 20, 2006"
+.SH NAME
+m16c-flash \- Flash programmer for Renesas M16C and R8C microcontrollers
+.SH SYNOPSIS
+.B m16c-flash
+.RB [ "COM_DEV" ]
+.RB [ "CPU_TYPE" ]
+.RB [ "FILE" ]
+.RB [ "ID1:...:ID7" ]
+.RB [ "OPTIONS" ]
+.SH DESCRIPTION
+.B m16c-flash
+is a flash programmer for the Renesas M16C and R8C microcontrollers which
+operates in asynchronous mode.
+.SH OPTIONS
+.B "COM_DEV"
+The serial device to use for flashing, e.g. /dev/ttyS0 or /dev/ttyUSB0.
+.PP
+.B "CPU_TYPE"
+The CPU type you want to flash to (currently M16C or R8C).
+.PP
+.B "FILE"
+The filename of the binary you want to flash.
+.PP
+.B "ID1:...:ID7"
+The device ID.
+.PP
+.B \-\-help
+Show a help text and exit.
+.PP
+.B \-\-version
+Show version information and exit.
+.SH EXAMPLES
+Flash the simple.s file onto an M16C microcontroller via the first serial
+port (/dev/ttyS0) using 0:0:0:0:0:0:0 as the device ID:
+.br
+.B m16c-flash /dev/ttyS0 M16C simple.s 0:0:0:0:0:0:0
+.PP
+Flash the test.mot file onto an R8C microcontroller via the USB serial
+device /dev/ttyUSB0, and using ff:ff:ff:ff:ff:ff:ff as device ID:
+.br
+.B m16c-flash /dev/ttyUSB0 R8C test.mot ff:ff:ff:ff:ff:ff:ff
+.SH BUGS
+Please report any bugs to Thomas Fischl <tfischl@gmx.de>.
+.SH LICENCE
+.B m16c-flash
+is covered by the GNU General Public License (GPL).
+.SH AUTHORS
+Greg Reynolds <greg@lostintheether.net>
+.br
+Jim Hawkridge <h046@eee-fs4.bham.ac.uk>
+.br
+Thomas Fischl <tfischl@gmx.de>
+.PP
+This manual page was written by Uwe Hermann <uwe@hermann-uwe.de>,
+for the Debian GNU/Linux system (but may be used by others).

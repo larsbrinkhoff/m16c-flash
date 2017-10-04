@@ -1,0 +1,6 @@
+Edit the Makefile to your tests.
+Run 'make clean'.
+Run 'make'.
+Run 'make install'.
+Set permissions of /dev/ttySn (where n is port ID) so that the user who
+runs 'm16c-flash' can use this port!
